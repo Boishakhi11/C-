@@ -30,8 +30,9 @@ totalGradePoints += course4Credit * course4Grade;
 totalGradePoints += course5Credit * course5Grade;
 
 decimal gradePointAverage = (decimal)totalGradePoints / totalCreditHours;
-
-
+int leadingDigit = (int) gradePointAverage;
+int firstDigit = (int) (gradePointAverage * 10) % 10;
+int secondDigit = (int) (gradePointAverage * 100) % 10;
 
 Console.WriteLine("Student: \t Sophia Johnson\n\n");
 Console.WriteLine("Course \t\t\t\t Grade \t Credit Hours");
@@ -40,4 +41,4 @@ Console.WriteLine($"{course2Name}\t\t\t\t  {gradeB}\t\t {course2Credit}");
 Console.WriteLine($"{course3Name}\t\t\t\t  {gradeB}\t\t {course3Credit}");
 Console.WriteLine($"{course4Name}\t\t  {gradeB}\t\t {course4Credit}");
 Console.WriteLine($"{course5Name}\t\t\t  {gradeA}\t\t {course5Credit}");
-Console.WriteLine($"Final GPA {gradePointAverage}");
+Console.WriteLine($"Final GPA: {leadingDigit}.{firstDigit}{secondDigit}");
